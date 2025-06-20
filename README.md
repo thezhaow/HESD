@@ -1,2 +1,2 @@
-# HESD
-Human Error String Distance
+# Human Error String Distance (HESD)
+
