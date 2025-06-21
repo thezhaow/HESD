@@ -1,7 +1,6 @@
 #include "CharDistance.h"
 
-CharDistance::CharDistance(std::string inputstr)
-{
+CharDistance::CharDistance(std::string inputstr){
     std::ifstream file(inputstr);
     std::string line;
     std::getline(file, m_printable_chars);
@@ -22,13 +21,25 @@ CharDistance::CharDistance(std::string inputstr)
     }
 }
 
-CharDistance::~CharDistance()
-{
+CharDistance::~CharDistance(){
     for(auto x: m_char_dist) x.second.clear();
     m_char_dist.clear();
 }
 
-
-double CharDistance::compare_char(char c1,char c2){
+double CharDistance::charcmp(const char c1,const char c2){
     return m_char_dist[c1][c2];
+}
+
+double CharDistance::strcmp(const char* s1, const char* s2){
+    double return_value = 0;
+    while (*s1){
+        return_value+=charcmp(*s1,*s2);
+        s1++;
+        s2++;
+    }
+    while(*s2){
+        return_value-=1.0;
+        s2++;
+    }
+    return return_value;
 }

@@ -1,18 +1,18 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
-#include <unordered_map>
+#include <stdio.h>
 #include <string>
+#include <unordered_map>
 
-class CharDistance
-{
+class CharDistance{
 private:
-    /* data */
     // Note: use default unordered map size
     std::unordered_map<char,std::unordered_map<char,double>> m_char_dist;
     std::string m_printable_chars;
 public:
-    CharDistance(std::string inputstr);
+    CharDistance(std::string);
     ~CharDistance();
-    double compare_char(char,char);
+    double charcmp(const char,const char);
+    double strcmp(const char*, const char*);
 };
