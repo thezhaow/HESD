@@ -1,7 +1,8 @@
-#include <iostream>
+#ifndef CHAR_DISTANCE_H
+#define CHAR_DISTANCE_H
+
 #include <fstream>
 #include <sstream>
-#include <stdio.h>
 #include <string>
 #include <unordered_map>
 
@@ -16,3 +17,5 @@ public:
     double charcmp(const char,const char);
     double strcmp(const char*, const char*);
 };
+
+#endif // CHAR_DISTANCE_H
