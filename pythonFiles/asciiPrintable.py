@@ -9,7 +9,7 @@ from collections import defaultdict
 print = lambda *args, **kwargs: builtins.print(*args, flush=True, **kwargs)
 
 class CharDist:
-    def __init__(self):
+    def __init__(self, outfile = "outfile.txt"):
         # printable characters
         self.printable_chars = string.printable[:94]
         # create a 94x94
@@ -18,14 +18,24 @@ class CharDist:
         self.char_map = defaultdict(lambda:len(self.char_map))
         # populates dictionary
         for key in self.printable_chars: self.char_map[key]
+        # output file name
+        self.outfile = outfile
 
     def fill_values(self):
-        print(self.char_map)
-        print(self.final_array)
+        # print(self.char_map)
+        # print(self.final_array)
+        pass
+
+    def export(self):
+        with open(self.outfile, "w") as f:
+            f.write(self.printable_chars+"\n")
+            for row in self.final_array:
+                f.write(" ".join(map(str, row)) + "\n")
 
 def main():
     cd = CharDist()
     cd.fill_values()
+    cd.export()
 
 if __name__ == "__main__":
     main()
