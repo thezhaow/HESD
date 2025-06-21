@@ -28,7 +28,9 @@ class CharDist:
 
     def export(self):
         with open(self.outfile, "w") as f:
+            # writes out printable chars first
             f.write(self.printable_chars+"\n")
+            # writes out array second
             for row in self.final_array:
                 f.write(" ".join(map(str, row)) + "\n")
 

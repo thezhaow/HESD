@@ -24,7 +24,8 @@ CharDistance::CharDistance(std::string inputstr)
 
 CharDistance::~CharDistance()
 {
-    //destructor
+    for(auto x: m_char_dist) x.second.clear();
+    m_char_dist.clear();
 }
 
 
