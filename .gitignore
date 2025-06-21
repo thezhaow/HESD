@@ -1,8 +1,4 @@
-handwriting_charactesr_database
-*.png
-handwritting_characters_database/curated/._.DS_Store
-.vscode
+handwritting_characters_database/*
+.vscode/*
 build
-handwritting_characters_database/README.md
-handwritting_characters_database/transformation.ipynb
-.gitignore
+pythonFiles/outfile.txt
