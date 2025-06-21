@@ -32,10 +32,14 @@ double CharDistance::charcmp(const char c1,const char c2){
 
 double CharDistance::strcmp(const char* s1, const char* s2){
     double return_value = 0;
-    while (*s1){
+    while (*s1 && *s2){
         return_value+=charcmp(*s1,*s2);
         s1++;
         s2++;
+    }
+    while(*s1){
+        return_value-=1.0;
+        s1++;
     }
     while(*s2){
         return_value-=1.0;
